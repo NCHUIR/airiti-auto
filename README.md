@@ -30,5 +30,8 @@ python main.py
 # Detail
 請確保```temp/download/```資料夾存在且內容爲空。
 
+# Enhancement
+目前是使用pytesseract來處理captcha驗證碼，約5次成功1次，若要加快可以引入其他辨識準確率更高的方案。
+
 # Author
 張世澤 <[zhshize@smail.nchu.edu.tw](mailto:zhshize@smail.nchu.edu.tw)> 2020
