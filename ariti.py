@@ -42,9 +42,11 @@ def download_file(browser: WebDriver, doc_id: str):
             img = convert_img(img, 192)
             img.save(captcha2_temp)
             text = pytesseract.image_to_string(img, lang='eng')
-            print('##' + text + '##')
+            text = str(text).replace(" ","").replace("\n","").replace("\f","")
+            print('##' + text + '##')          
             if text == '' or text is None:
                 refresh = browser.find_element_by_xpath('/html/body/div[9]/div[2]/p/a').click()
+                print('hello')
                 time.sleep(0.1)
                 continue
             input.send_keys(text)
@@ -60,6 +62,7 @@ def download_file(browser: WebDriver, doc_id: str):
         pass
     while len(os.listdir(download_temp_path)) == 0:
         time.sleep(1)
+    time.sleep(1)
     return download_temp_path + os.path.sep + os.listdir(download_temp_path)[0]
 
 

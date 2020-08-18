@@ -60,6 +60,7 @@ def main():
                 metadatas.append(metadata)
 
                 pdf = download_file(browser, ids[i])
+                time.sleep(0.5)
                 os.rename(pdf, dest_path + os.path.sep + metadata['contents'])
                 # time.sleep()
 
