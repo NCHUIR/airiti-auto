@@ -12,7 +12,7 @@ from config import download_temp_path, captcha_temp, captcha2_temp
 
 
 def get_tbody(browser: WebDriver):
-    return browser.find_element_by_xpath('/html/body/div[1]/div[2]/div[2]/div/div[9]/table/tbody')
+    return browser.find_element_by_css_selector('#oTable > tbody')
 
 
 def convert_img(img, threshold):
@@ -45,8 +45,7 @@ def download_file(browser: WebDriver, doc_id: str):
             text = str(text).replace(" ","").replace("\n","").replace("\f","")
             print('##' + text + '##')          
             if text == '' or text is None:
-                refresh = browser.find_element_by_xpath('/html/body/div[9]/div[2]/p/a').click()
-                print('hello')
+                refresh = browser.find_element_by_xpath('/html/body/div[10]/div[2]/p/a').click()
                 time.sleep(0.1)
                 continue
             input.send_keys(text)
@@ -60,6 +59,7 @@ def download_file(browser: WebDriver, doc_id: str):
                 pass
     except BaseException:
         pass
+    print (str(os.listdir(download_temp_path)))
     while len(os.listdir(download_temp_path)) == 0:
         time.sleep(1)
     time.sleep(1)

@@ -24,6 +24,12 @@ orders = [
 ```
 python main.py
 ```
+### For WINDOWS
+```
+chcp 65001
+```
+[reference](https://coder.tw/?p=7487)
+
 ## Result
 執行結果會放在```output/```資料夾中。
 
