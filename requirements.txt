@@ -1,6 +1,6 @@
 certifi==2020.4.5.1
 selenium==3.141.0
-urllib3==1.25.9
+urllib3==1.26.5
 
 pytesseract~=0.3.4
 requests~=2.23.0
